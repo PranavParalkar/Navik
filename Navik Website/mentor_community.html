@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Navik - Mentor Community</title>
+    <link rel="icon" type="image/png" href="Logo_Navik.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="bg-gradient-to-b from-blue-900 to-gray-900 min-h-screen flex flex-col items-center animate-fadeIn text-white font-roboto">
+
+    <header class="w-full flex justify-between items-center p-6 bg-gray-900 bg-opacity-75 shadow-lg">
+        <img alt="Navik logo" class="h-12 logo-hover transform hover:scale-110 transition" src="Logo_Navik.png" width="50"/>
+
+        <nav class="flex space-x-8 text-lg">
+            <a class="text-blue-400 hover:text-white transition duration-300" href="dashboard.html">Home</a>
+            <a class="hover:text-blue-400 transition duration-300" href="#">Career Exploration</a>
+            <a class="text-blue-400 border-b-2 border-blue-400" href="mentor_community.html">Mentor Community</a>
+            <a class="hover:text-blue-400 transition duration-300" href="#">Report</a>
+            <a class="hover:text-blue-400 transition duration-300" href="#">Roadmap</a>
+            <a class="hover:text-blue-400 transition duration-300" href="test.html">Tests</a>
+            <a class="hover:text-blue-400 transition duration-300" href="#">Profile</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center text-center px-4 py-12">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-blue-400 animate-bounce">Mentor Community</h1>
+        <p class="text-lg md:text-xl mb-8 max-w-3xl text-gray-300">Join our expert mentors for personalized career guidance and insights to shape your future.</p>
+
+        <section class="w-full max-w-6xl text-gray-200 text-lg text-left mb-12">
+            <h2 class="text-3xl font-bold text-blue-300 mb-4">Why Mentors Matter?</h2>
+            <p class="mb-4">As a student in 10th or 12th grade, choosing the right career path can feel overwhelming. With so many options available, it's easy to feel unsure about which path to take. This is where a mentor comes in – an experienced guide who can help you understand your strengths, interests, and the best career choices suited for you.</p>
+            <p class="mb-4">A mentor not only provides career insights but also shares their personal experiences, guiding you through challenges, helping you set realistic goals, and offering valuable industry knowledge. Whether you need help choosing a stream, deciding on a college, or understanding the job market, the right mentor can make all the difference.</p>
+            <p class="mb-4">Through Navik’s Mentor Community, you can connect with professionals from various fields who can provide clarity, advice, and motivation to help you make informed decisions about your future.</p>
+            <h3 class="text-2xl font-bold text-blue-300 mt-6">How Can Mentors Help?</h3>
+            <ul class="list-disc list-inside text-gray-300 mt-4 space-y-2">
+                <li><strong>Stream Selection:</strong> Get advice on which subjects to choose based on your strengths and interests.</li>
+                <li><strong>Career Insights:</strong> Learn about various career paths, job roles, and opportunities in different industries.</li>
+                <li><strong>College & Course Guidance:</strong> Understand the best universities, courses, and certifications that align with your goals.</li>
+                <li><strong>Personal Development:</strong> Gain confidence, leadership skills, and decision-making abilities.</li>
+                <li><strong>Networking Opportunities:</strong> Connect with professionals and build a strong network for future career growth.</li>
+            </ul>
+        </section>
+        
+        <section class="w-full max-w-6xl flex flex-wrap justify-center gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                <img src="Mentor.png" alt="Mentor" class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-blue-400">
+                <h3 class="text-xl font-bold text-gray-900">Aditya</h3>
+                <p class="text-gray-600">Software Engineer</p>
+                <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition">Connect</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                <img src="Mentor.png" alt="Mentor" class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-blue-400">
+                <h3 class="text-xl font-bold text-gray-900">Kartik</h3>
+                <p class="text-gray-600">Data Scientist</p>
+                <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition">Connect</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                <img src="Mentor.png" alt="Mentor" class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-blue-400">
+                <h3 class="text-xl font-bold text-gray-900">Saksham</h3>
+                <p class="text-gray-600">Product Manager</p>
+                <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition">Connect</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-10 bg-gray-900 bg-opacity-75 text-center text-gray-300">
+        <p>2025 © Navik - Designed & Crafted <span class="text-red-500">❤️</span> by Navik Team</p>
+    </footer>
+
+</body>
+</html>

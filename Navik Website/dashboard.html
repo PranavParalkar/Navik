@@ -21,15 +21,14 @@
 <body class="bg-gradient-to-b from-blue-900 to-gray-900 min-h-screen flex flex-col items-center animate-fadeIn">
 
     <header class="w-full flex justify-between items-center p-6">
-        <img alt="Navik logo" class="h-12 logo-hover" src="Logo_Navik.png" width="50"/>
-
+        <img src="Logo_Navik.png" alt="Navik Logo" class="w-20 h-20 navik-logo">
         <nav class="flex space-x-8 text-lg">
             <a class="text-blue-400 nav-link" href="#">Home</a>
             <a class="hover:text-blue-400 nav-link" href="#">Career Exploration</a>
-            <a class="hover:text-blue-400 nav-link" href="#">Mentor Community</a>
+            <a class="hover:text-blue-400 nav-link" href="mentor_community.html">Mentor Community</a>
             <a class="hover:text-blue-400 nav-link" href="#">Report</a>
             <a class="hover:text-blue-400 nav-link" href="#">Roadmap</a>
-            <a class="hover:text-blue-400 nav-link" href="#">Tests</a>
+            <a class="hover:text-blue-400 nav-link" href="test.html">Tests</a>
             <a class="hover:text-blue-400 nav-link" href="#">Profile</a>
         </nav>
 
@@ -54,13 +53,42 @@
         <p class="text-lg md:text-xl mt-6 max-w-2xl opacity-0 animate-fadeInUp delay-600">
             Join Navik today and take the first step towards a successful career!
         </p>
+
+        <section class="about-section mt-12 p-8 text-center rounded-lg animate-fadeUp">
+            <h2 class="text-3xl font-bold">About Navik</h2>
+            <p class="mt-4 text-lg">We provide students with a structured approach to career development by offering assessments, guidance, and mentoring.</p>
+            <img src="roadmap.webp" alt="Career Path" class="mx-auto mt-4 w-64 rounded-lg shadow-lg">
+        </section>
+        
+
+        <!-- Mentor Section -->
+        <section class="mentor-section mt-12 p-8 text-center rounded-lg animate-fadeUp">
+            <h2 class="text-3xl font-bold">Mentor Community</h2>
+            <p class="mt-4 text-lg">Get guidance from industry professionals who can help you make the right career choices.</p>
+            <div class="flex justify-center mt-6">
+                <img src="bestmentor.jpg" alt="Mentor 1" class="w-32 h-32 rounded-full mx-2 shadow-lg mentor-photo">
+                <img src="download.jpg" alt="Mentor 2" class="w-32 h-32 rounded-full mx-2 shadow-lg mentor-photo">
+                <img src="download1.jpg" alt="Mentor 3" class="w-32 h-32 rounded-full mx-2 shadow-lg mentor-photo">
+
+            </div>
+        </section>
+        
+
+        <!-- Call to Action Section -->
+        <section class="call-to-action-section mt-12 p-8 text-center rounded-lg animate-fadeUp">
+            <h2 class="text-3xl font-bold">Ready to Start?</h2>
+            <p class="mt-4 text-lg">Join Navik and take your career to the next level with expert mentorship and guidance.</p>
+            <img src="success.webp" alt="Success Image" class="mx-auto mt-4 w-64 rounded-lg shadow-lg">
+            <button class="btn-animated py-3 px-8 rounded-lg text-white mt-6">Get Started Now</button>
+        </section>
+        
     </main>
 
     <footer class="w-full py-10 bg-gradient-to-b from-gray-900 to-blue-900">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="text-center md:text-left mb-6 md:mb-0">
-                    <img alt="Navik Logo" class="mx-auto md:mx-0 mb-4 h-12 logo-hover" src="Logo_Navik.png"/>
+                    <img src="Logo_Navik.png" alt="Navik Logo" class="w-20 h-20 navik-logo">
                     <p class="mb-4 text-blue-400 font-bold">Follow Us:</p>
                     <div class="flex justify-center md:justify-start space-x-4">
                         <a class="text-white hover:text-blue-400" href="#"><i class="fab fa-instagram"></i></a>
