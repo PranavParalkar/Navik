@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Exploration - Navik</title>
+    <link rel="icon" type="image/png" href="Logo_Navik.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+    <!-- Header Navigation -->
+    <header class="w-full flex justify-between items-center p-6 bg-gray-800 shadow-lg">
+        <img src="Logo_Navik.png" alt="Navik Logo" class="w-16 h-16">
+        <nav class="flex space-x-6 text-lg">
+            <a class="hover:text-blue-400" href="dashboard.html">Home</a>
+            <a class="text-blue-400" href="#">Career Exploration</a>
+            <a class="hover:text-blue-400" href="mentor_community.html">Mentor Community</a>
+            <a class="hover:text-blue-400" href="#">Report</a>
+            <a class="hover:text-blue-400" href="#">Roadmap</a>
+            <a class="hover:text-blue-400" href="test.html">Tests</a>
+            <a class="hover:text-blue-400" href="profile.html">Profile</a>
+        </nav>
+        <a href="Contact.html">
+            <button class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-500 transition flex items-center">
+                <i class="fas fa-envelope mr-2"></i> Contact Us
+            </button>
+        </a>
+        
+    </header>
+
+    <!-- Career Exploration Section -->
+    <main class="flex-grow p-6">
+        <h1 class="text-4xl font-bold text-center text-blue-400 mb-6">Explore Careers</h1>
+
+        <!-- Search and Sort Options -->
+        <div class="flex flex-wrap justify-center mb-6 gap-4">
+            <input type="text" id="search" class="p-3 w-2/3 md:w-1/3 text-black rounded-md" placeholder="Search careers...">
+            <button onclick="filterCareers()" class="bg-blue-600 p-3 rounded-md hover:bg-blue-500">
+                <i class="fas fa-search"></i>
+            </button>
+            <select id="sort" class="p-3 text-black rounded-md" onchange="sortCareers()">
+                <option value="">Sort By</option>
+                <option value="salary">Salary (High to Low)</option>
+                <option value="scope">Scope (High to Low)</option>
+            </select>
+        </div>
+
+        <!-- Career Cards -->
+        <div id="careers" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+            <!-- Career Cards will be injected by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-4 bg-gray-800 text-center">
+        <p>2025 © Navik - Designed with ❤️ by Navik Team</p>
+    </footer>
+
+    <!-- JavaScript for Dynamic Career List -->
+    <script>
+        const careers = [
+            { name: "Data Scientist", skills: "Python, ML, Statistics", salary: 100000, scope: 5, education: "Bachelor's in CS", growth: "Fast", environment: "Office, Remote" },
+            { name: "Doctor", skills: "Diagnosis, Surgery", salary: 150000, scope: 6, education: "Medical Degree", growth: "Stable", environment: "Hospital, Clinic" },
+            { name: "Lawyer", skills: "Legal Research, Advocacy", salary: 130000, scope: 5, education: "Law Degree", growth: "Stable", environment: "Courtroom, Office" },
+            { name: "Financial Analyst", skills: "Investment Analysis, Excel", salary: 85000, scope: 4, education: "Bachelor's in Finance", growth: "Moderate", environment: "Office" },
+            { name: "Journalist", skills: "Writing, Investigative Research", salary: 60000, scope: 3, education: "Journalism Degree", growth: "Slow", environment: "Newsroom, Remote" },
+            { name: "Mechanical Engineer", skills: "CAD, Thermodynamics", salary: 90000, scope: 4, education: "Engineering Degree", growth: "Moderate", environment: "Office, Field" },
+            { name: "Nurse", skills: "Patient Care, Medical Assistance", salary: 70000, scope: 6, education: "Nursing Degree", growth: "Fast", environment: "Hospital, Clinic" },
+            { name: "Architect", skills: "Design, AutoCAD", salary: 95000, scope: 4, education: "Architecture Degree", growth: "Moderate", environment: "Office, Site" },
+            { name: "Psychologist", skills: "Counseling, Therapy", salary: 75000, scope: 5, education: "Psychology Degree", growth: "Stable", environment: "Clinic, Office" },
+            { name: "Chef", skills: "Culinary Arts, Food Safety", salary: 60000, scope: 3, education: "Culinary School", growth: "Moderate", environment: "Restaurant, Hotel" },
+            { name: "Software Engineer", skills: "Programming, Development", salary: 110000, scope: 6, education: "Computer Science Degree", growth: "Fast", environment: "Office, Remote" },
+            { name: "Entrepreneur", skills: "Business Management, Leadership", salary: 120000, scope: 5, education: "Varied", growth: "High", environment: "Flexible" }
+        ];
+
+        function displayCareers(careerList) {
+            const container = document.getElementById('careers');
+            container.innerHTML = "";
+            careerList.forEach(career => {
+                container.innerHTML += `
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-md text-center hover:bg-gray-600 transition duration-300">
+                        <h2 class="text-2xl font-bold text-blue-300">${career.name}</h2>
+                        <p><strong>Skills:</strong> ${career.skills}</p>
+                        <p><strong>Salary:</strong> ₹${career.salary}</p>
+                        <p><strong>Scope:</strong> ${career.scope}</p>
+                        <p><strong>Education:</strong> ${career.education}</p>
+                        <p><strong>Growth Rate:</strong> ${career.growth}</p>
+                        <p><strong>Work Environment:</strong> ${career.environment}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function sortCareers() {
+            const sortBy = document.getElementById('sort').value;
+            let sortedCareers = [...careers];
+            if (sortBy === "salary") {
+                sortedCareers.sort((a, b) => b.salary - a.salary);
+            } else if (sortBy === "scope") {
+                sortedCareers.sort((a, b) => b.scope - a.scope);
+            }
+            displayCareers(sortedCareers);
+        }
+
+        window.onload = () => displayCareers(careers);
+    </script>
+</body>
+</html>

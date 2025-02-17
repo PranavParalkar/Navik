@@ -17,27 +17,103 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css"/>
+
+    <style>
+        /* Sidebar style */
+        .sidebar {
+            transition: transform 0.4s ease-in-out, box-shadow 0.3s ease;
+            transform: translateX(100%);
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            background-color: #2d3748; /* Highlighted Sidebar */
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Darken the background slightly */
+            z-index: 999;
+        }
+
+        .overlay.open {
+            display: block;
+        }
+
+        /* Darker Sidebar */
+        .sidebar {
+            background-color: #1a202c; /* Darker background */
+            color: #e2e8f0; /* Light text */
+        }
+
+        /* Profile card */
+        .profile-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sidebar close button */
+        .close-btn:hover {
+            background-color: #38B2AC;
+            transform: scale(1.1);
+        }
+
+        /* Progress Bar Styling */
+        .progress-bar {
+            height: 10px;
+            width: 100%;
+            background-color: #e2e8f0;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            width: 80%;
+            background-color: #38B2AC;
+            border-radius: 5px;
+        }
+
+        /* Brighter Page Effect */
+        .brighten {
+            filter: brightness(1.2); /* Brightens the page */
+            transition: filter 0.3s ease;
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-b from-blue-900 to-gray-900 min-h-screen flex flex-col items-center animate-fadeIn">
+<body class="bg-gradient-to-b from-blue-900 to-gray-900 min-h-screen flex flex-col items-center transition-all duration-300">
 
     <header class="w-full flex justify-between items-center p-6">
         <img src="Logo_Navik.png" alt="Navik Logo" class="w-20 h-20 navik-logo">
         <nav class="flex space-x-8 text-lg">
-            <a class="text-blue-400 nav-link" href="#">Home</a>
-            <a class="hover:text-blue-400 nav-link" href="#">Career Exploration</a>
+            <a class="text-blue-400 nav-link" href="dashboard.html">Home</a>
+            <a class="hover:text-blue-400 nav-link" href="Career_Exploration.html">Career Exploration</a>
             <a class="hover:text-blue-400 nav-link" href="mentor_community.html">Mentor Community</a>
             <a class="hover:text-blue-400 nav-link" href="#">Report</a>
             <a class="hover:text-blue-400 nav-link" href="#">Roadmap</a>
             <a class="hover:text-blue-400 nav-link" href="test.html">Tests</a>
-            <a class="hover:text-blue-400 nav-link" href="#">Profile</a>
+            <a class="hover:text-blue-400 nav-link" href="profile.html" id="profileLink">Profile</a>
         </nav>
 
-        <button class="bg-blue-600 text-white py-2 px-4 rounded-full btn-hover flex items-center">
+        <a href="Contact.HTML" class="bg-blue-600 text-white py-2 px-4 rounded-full btn-hover flex items-center">
             <i class="fas fa-envelope mr-2"></i> Contact Us
-        </button>
+        </a>
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
+        <!-- Content here -->
         <h1 class="text-5xl md:text-6xl font-bold mb-4 opacity-0 animate-fadeInUp">
             <span class="text-blue-400">NAVIK</span> - Career Guidance
         </h1>
@@ -59,7 +135,6 @@
             <p class="mt-4 text-lg">We provide students with a structured approach to career development by offering assessments, guidance, and mentoring.</p>
             <img src="roadmap.webp" alt="Career Path" class="mx-auto mt-4 w-64 rounded-lg shadow-lg">
         </section>
-        
 
         <!-- Mentor Section -->
         <section class="mentor-section mt-12 p-8 text-center rounded-lg animate-fadeUp">
@@ -69,69 +144,77 @@
                 <img src="bestmentor.jpg" alt="Mentor 1" class="w-32 h-32 rounded-full mx-2 shadow-lg mentor-photo">
                 <img src="download.jpg" alt="Mentor 2" class="w-32 h-32 rounded-full mx-2 shadow-lg mentor-photo">
                 <img src="download1.jpg" alt="Mentor 3" class="w-32 h-32 rounded-full mx-2 shadow-lg mentor-photo">
-
             </div>
         </section>
-        
 
         <!-- Call to Action Section -->
         <section class="call-to-action-section mt-12 p-8 text-center rounded-lg animate-fadeUp">
             <h2 class="text-3xl font-bold">Ready to Start?</h2>
             <p class="mt-4 text-lg">Join Navik and take your career to the next level with expert mentorship and guidance.</p>
             <img src="success.webp" alt="Success Image" class="mx-auto mt-4 w-64 rounded-lg shadow-lg">
-            <button class="btn-animated py-3 px-8 rounded-lg text-white mt-6">Get Started Now</button>
+            <button onclick="window.location.href='Career_Exploration.html'" class="btn-animated py-3 px-8 rounded-lg text-white mt-6">
+                Get Started Now
+            </button>
         </section>
-        
+
     </main>
 
     <footer class="w-full py-10 bg-gradient-to-b from-gray-900 to-blue-900">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-6 md:mb-0">
-                    <img src="Logo_Navik.png" alt="Navik Logo" class="w-20 h-20 navik-logo">
-                    <p class="mb-4 text-blue-400 font-bold">Follow Us:</p>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a class="text-white hover:text-blue-400" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="text-white hover:text-blue-400" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="text-white hover:text-blue-400" href="#"><i class="fab fa-linkedin"></i></a>
-                        <a class="text-white hover:text-blue-400" href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row justify-between w-full md:w-auto space-y-6 md:space-y-0 md:space-x-12 text-center md:text-left">
-                    <div>
-                        <h3 class="font-bold mb-4 text-blue-400">For our club</h3>
-                        <ul>
-                            <li><a class="hover:underline" href="#">Events</a></li>
-                            <li><a class="hover:underline" href="#">Club Updates</a></li>
-                            <li><a class="hover:underline" href="#">Collaboration Opportunities</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-bold mb-4 text-blue-400">Support</h3>   
-                        <ul>
-                            <li><a class="hover:underline" href="#">Walkthrough</a></li>
-                            <li><a class="hover:underline" href="#">Blog</a></li>
-                            <li><a class="hover:underline" href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-bold mb-4 text-blue-400">Legal</h3>
-                        <ul>
-                            <li><a class="hover:underline" href="#">Terms of service</a></li>
-                            <li><a class="hover:underline" href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
-                <p class="mb-4 md:mb-0">
-                    2025 © Navik - Designed & Crafted 
-                    <span class="text-red-500">❤️</span> by Navik Team
-                </p>
-                <a class="hover:underline" href="#">Terms Conditions & Policy</a>
-            </div>
+            <!-- Footer content -->
         </div>
     </footer>
+
+    <!-- Profile Sidebar -->
+    <div id="profileSidebar" class="sidebar fixed top-0 right-0 w-80 bg-gray-800 h-full shadow-xl p-6 z-50 rounded-l-lg">
+        <h2 class="text-3xl font-bold mb-4 text-blue-400">Profile Details</h2>
+        
+        <!-- User Profile Image -->
+        <div class="flex justify-center mb-6">
+            <img src="https://media.istockphoto.com/id/610003972/vector/vector-businessman-black-silhouette-isolated.jpg?s=612x612&w=0&k=20&c=Iu6j0zFZBkswfq8VLVW8XmTLLxTLM63bfvI6uXdkacM=" 
+                 alt="User Profile" 
+                 class="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg">
+        </div>
+
+        <!-- User Info and Progress -->
+        <div class="profile-card p-4 rounded-lg space-y-4 text-white">
+            <div class="text-lg">Name: John Doe</div>
+            <div class="text-lg">Email: johndoe@example.com</div>
+            <div class="text-lg">Location: New York</div>
+            <div class="text-lg">Career Path Chosen: Data Science</div>
+            
+            <!-- Progress Bar Inside the Box -->
+            <div class="mt-6 text-white">
+                <div class="text-lg mb-2">Progress: 80%</div>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Close Sidebar Button -->
+        <button onclick="closeSidebar()" class="close-btn mt-6 px-4 py-2 bg-blue-600 text-white rounded-full">Close</button>
+    </div>
+
+    <!-- Overlay to close the sidebar -->
+    <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+    <script>
+        // Function to open the sidebar
+        document.querySelector('#profileLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('profileSidebar').classList.add('open');
+            document.getElementById('overlay').classList.add('open');
+            document.body.classList.add('brighten');
+        });
+
+        // Function to close the sidebar
+        function closeSidebar() {
+            document.getElementById('profileSidebar').classList.remove('open');
+            document.getElementById('overlay').classList.remove('open');
+            document.body.classList.remove('brighten');
+        }
+    </script>
 
 </body>
 </html>
